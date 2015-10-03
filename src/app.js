@@ -11,8 +11,6 @@ var set = 0;
 var streak = 10;
 var total = 40;
 
-
-
 var main = new UI.Card({
   subtitle: 'NOTHING IS GIVEN, EVERYTHING IS EARNED'
 });
@@ -104,8 +102,8 @@ main.on('click', 'select', function(e) {
         
         attendanceCard.add(happy_lebron);
         //attendanceCard.show();
-        streak_text.text('Total Days: ' + total.toString());
-        streak_text.text('Streak Days: ' + streak.toString());
+        total_text.text('Total: ' + total.toString());
+        streak_text.text('Streak: ' + streak.toString());
         attendanceCard.add(streak_text);
         attendanceCard.add(total_text);
       });
