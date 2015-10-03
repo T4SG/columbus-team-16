@@ -16,7 +16,7 @@ var main = new UI.Card({
 
 main.show();
 
-main.on('click', 'up', function(e) {
+main.on('click', 'select', function(e) {
   var menu = new UI.Menu({
     sections: [{
       items: [{
@@ -35,11 +35,16 @@ main.on('click', 'up', function(e) {
   menu.on('select', function(e) {
     console.log('Selected item #' + e.itemIndex + ' of section #' + e.sectionIndex);
     console.log('The item is titled "' + e.item.title + '"');
+    
+    var card = new UI.Card();
+    card.subtitle('button' + e.itemIndex + 'ok');
+
+    card.show();
   });
   menu.show();
 });
 
-main.on('click', 'select', function(e) {
+main.on('click', 'up', function(e) {
   var wind = new UI.Window({
     fullscreen: true,
   });
