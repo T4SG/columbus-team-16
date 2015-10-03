@@ -20,12 +20,15 @@ main.on('click', 'up', function(e) {
   var menu = new UI.Menu({
     sections: [{
       items: [{
-        title: 'Pebble.js',
+        title: 'Attendance',
         icon: 'images/menu_icon.png',
-        subtitle: 'Can do Menus'
+        subtitle: 'Did you go to school?'
       }, {
-        title: 'Second Item',
-        subtitle: 'Subtitle Text'
+        title: 'Grades',
+        subtitle: 'Keep up in school'
+      }, {
+        title: 'Community Service',
+        subtitle: 'Log your hours'
       }]
     }]
   });
