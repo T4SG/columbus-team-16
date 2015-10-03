@@ -31,7 +31,7 @@ main.on('click', 'select', function(e) {
         icon: 'images/menu_icon.png',
         subtitle: 'Keep up in school'
       }, {
-        title: 'Community Service',
+        title: 'Activities',
         icon: 'images/menu_icon.png',
         subtitle: 'Log your hours'
       }, {
@@ -169,7 +169,36 @@ main.on('click', 'select', function(e) {
       gradesmenu.show();
 
     }//end of if grades statement
+    if(e.item.title === 'Goals') {
+     var goalmenu = new UI.Menu ({
+       sections: [{
+         items: [{
+           title: '15 day attendance streak',
+         }, {
+           title: '3 hrs service',
+         }, {
+           title: '5 hrs activities',
+         }, {
+           title: '30 day attendance streak',
+         }]
+       }]
+     });
+      goalmenu.show();
+    } //end goals tab
+    if(e.item.title === 'Activities') {
+      var activitymenu = new UI.Menu({
+        sections: [{
+          items: [{
+            title: 'Community Service',
+          }, {
+            title: 'Extracurriculars',
+          }]
+        }]
+      });
+      activitymenu.show();
+    }//end goal loop
   });
+  
   menu.show();
 });
 
