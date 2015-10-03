@@ -28,6 +28,21 @@
                 "file": "fonts/UbuntuMono-Regular.ttf",
                 "name": "MONO_FONT_14",
                 "type": "font"
+            },
+            {
+                "file": "images/school.png",
+                "name": "IMAGES_SCHOOL_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/happy lebron.png",
+                "name": "IMAGES_HAPPY_LEBRON_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/sad lebron.png",
+                "name": "IMAGES_SAD_LEBRON_PNG",
+                "type": "png"
             }
         ]
     },
