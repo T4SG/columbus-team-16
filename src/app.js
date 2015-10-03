@@ -12,6 +12,7 @@ var streak = 10;
 var total = 40;
 
 
+
 var main = new UI.Card({
   subtitle: 'NOTHING IS GIVEN, EVERYTHING IS EARNED'
 });
@@ -27,10 +28,20 @@ main.on('click', 'select', function(e) {
         subtitle: 'Did you go to school?'
       }, {
         title: 'Grades',
+        icon: 'images/menu_icon.png',
         subtitle: 'Keep up in school'
       }, {
         title: 'Community Service',
+        icon: 'images/menu_icon.png',
         subtitle: 'Log your hours'
+      }, {
+        title: 'Twitter Feed',
+        icon: 'images/menu_icon.png',
+        subtitle: 'Check out twitter!'
+      }, {
+        title: 'Goals',
+        icon: 'images/menu_icon.png',
+        subtitle: 'Look at your accomplishments'
       }]
     }]
   });
@@ -158,22 +169,6 @@ main.on('click', 'select', function(e) {
       gradesmenu.show();
 
     }//end of if grades statement
-    if(e.item.title === 'Community Service') {
-      var serviceWindow = new UI.Window({
-        fullscreen: true,
-        backgroundcolor: 'white'
-       });
-      var serviceTotal = new UI.Text({
-        position: new Vector2(0, 50),
-        size: new Vector2(144, 30),
-        font: 'gothic-24-bold',
-        text: 'Streak: ' + streak.toString(),
-        textAlign: 'center'
-      });
-      serviceWindow.show();
-      serviceTotal.text('Total' + serviceTotal.to_string());
-      serviceWindow.add(serviceTotal);
-    } //end of if service statement
   });
   menu.show();
 });
