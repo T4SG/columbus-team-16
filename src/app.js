@@ -80,12 +80,12 @@ main.on('click', 'select', function(e) {
       var happy_lebron = new UI.Image({
         //added stuff here
      
-        image: 'HAPPY_LEBRON'
+        image: 'IMAGES_HAPPYLEBRONREAL_PNG'
       });
       var sad_lebron = new UI.Image({
         //position: new VectorLebronSad(0,0),
         //size: new VectorLebronSad(144,168),
-        image: 'SAD_LEBRON'
+        image: 'IMAGES_SADLEBRONREAL_PNG'
       });
       attendanceCard.add(in_school);
       attendanceCard.add(not_in_school);
@@ -100,21 +100,21 @@ main.on('click', 'select', function(e) {
           set = 1;
         }
         
-        attendanceCard.add(happy_lebron);
         //attendanceCard.show();
         total_text.text('Total: ' + total.toString());
         streak_text.text('Streak: ' + streak.toString());
         attendanceCard.add(streak_text);
         attendanceCard.add(total_text);
+        attendanceCard.add(happy_lebron);
       });
       attendanceCard.on('click', 'down', function(){
         if (set === 0) {
           streak = 0;
           set = 1;
         }
-        attendanceCard.add(sad_lebron);
         streak_text.text('Streak Days: ' + streak.toString());
         attendanceCard.add(streak_text);
+        attendanceCard.add(sad_lebron);
       });
 
     }
