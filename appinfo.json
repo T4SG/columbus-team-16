@@ -30,6 +30,11 @@
                 "type": "font"
             },
             {
+                "file": "images/happy lebron.png",
+                "name": "IMAGES_HAPPY_LEBRON_PNG",
+                "type": "png"
+            },
+            {
                 "file": "images/Sad Lebron.png",
                 "name": "IMAGES_SAD_LEBRON_PNG",
                 "type": "png"
