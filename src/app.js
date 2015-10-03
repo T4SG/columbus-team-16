@@ -9,7 +9,7 @@
 var UI = require('ui');
 var Vector2 = require('vector2');
 var Vector3 = require('vector3');
-
+var Vector4 = require('vector4');
 
 var main = new UI.Card({
   title: 'Pebble.js',
@@ -25,7 +25,7 @@ main.on('click', 'select', function(e) {
     sections: [{
       items: [{
         title: 'Attendance',
-        icon: 'images/menu_icon.png',
+        icon: 'images/happy_lebron-color.png',
         subtitle: 'Did you go to school?'
       }, {
         title: 'Grades',
@@ -41,19 +41,33 @@ main.on('click', 'select', function(e) {
     console.log('The item is titled "' + e.item.title + '"');
     
     if(e.itemIndex === 0) {
+      var streak = 0;
       var attendanceCard = new UI.Card();
+      attendanceCard.show();
       attendanceCard.title('Where are you?');
       attendanceCard.subtitle('Are you in class?');
+      attendanceCard.body(streak);
       
       attendanceCard.on('click', 'up', function(e) {
         var image = new UI.Image({
           position: new Vector3(0, 0),
           size: new Vector3(144, 168),
-          image: 'images/your_image.png'
+          image: 'happylebronreal.png'
         });
         attendanceCard.add(image);
-        attendanceCard.show();
+        image.show();
+        streak += 1;
     });
+      attendanceCard.on('click', 'down', function(e) {
+        var image2 = new UI.Image({
+          position: new Vector4(0, 0),
+          size: new Vector4(144, 168),
+          image2: 'sadlebronreal.png'
+        });
+        attendanceCard.add(image2);
+        image2.show();
+        streak = 0;
+      });
     }
                         
     if(e.itemIndex === 1) {
