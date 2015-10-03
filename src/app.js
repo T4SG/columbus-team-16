@@ -4,8 +4,12 @@
  * This is where you write your app.
  */
 
+
+
 var UI = require('ui');
 var Vector2 = require('vector2');
+var Vector3 = require('vector3');
+
 
 var main = new UI.Card({
   title: 'Pebble.js',
@@ -36,13 +40,39 @@ main.on('click', 'select', function(e) {
     console.log('Selected item #' + e.itemIndex + ' of section #' + e.sectionIndex);
     console.log('The item is titled "' + e.item.title + '"');
     
-    var card = new UI.Card();
-    card.subtitle('button' + e.itemIndex + 'ok');
-
-    card.show();
+    if(e.itemIndex === 0) {
+      var attendanceCard = new UI.Card();
+      attendanceCard.title('Where are you?');
+      attendanceCard.subtitle('Are you in class?');
+      
+      attendanceCard.on('click', 'up', function(e) {
+        var image = new UI.Image({
+          position: new Vector3(0, 0),
+          size: new Vector3(144, 168),
+          image: 'images/your_image.png'
+        });
+        attendanceCard.add(image);
+        attendanceCard.show();
+    });
+    }
+                        
+    if(e.itemIndex === 1) {
+      var gradesCard = new UI.Card();
+      gradesCard.subtitle('button' + e.itemIndex + 'ok');
+      gradesCard.show();
+    }
+    if(e.itemIndex === 2) {
+      var communityCard = new UI.Card();
+      communityCard.subtitle('button' + e.itemIndex + 'ok');
+      communityCard.show();
+    }
+    
   });
   menu.show();
 });
+
+
+
 
 main.on('click', 'up', function(e) {
   var wind = new UI.Window({
